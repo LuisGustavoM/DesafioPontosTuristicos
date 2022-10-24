@@ -1,11 +1,15 @@
 <section>
+  <div class="box box-primary box-header box-title with-border">
   <div class="d-flex flex-row mb-5 ">
     <div *ngIf="pontoTuristico" class="p-8">
       <h5>Detalhes ponto turístico: {{pontoTuristico.nome}}</h5>
     </div>
+      <div *ngIf="pontoTuristico == null" class="p-8">
+        <h4>Cadastrar novo ponto turístico</h4>
+      </div>
   </div>
 
-  <form [formGroup]="formGroup" needs-validation class="row g-3">
+  <form [formGroup]="formGroup" needs-validation class="row g-3 box-body mb-3">
     <div class="col-md-4">
       <label for="nome" class="form-label">Nome</label>
       <input type="text" formControlName="nome" maxlength="100" minlength="3" class="form-control" id="nome" >
@@ -95,13 +99,15 @@
      </select>
     </div>
 
-    <div class="col-12">
-      <button routerLink='/pontos-turisticos' class="btn btn-sm btn-warning">Voltar</button>
+  </form>
+
+  <div class="box-footer">
+    <button routerLink='/pontos-turisticos' class="btn btn-sm btn-warning">Voltar</button>
       <button id="btn_espaco" [disabled]="!formGroup.valid || formGroup.get('estado')!.value == '0' || formGroup.get('cidade')!.value == '0'"
       type="submit" class="btn btn-sm btn-primary" (click)="salvar()">{{textoBotao}}</button>
       <button id="btn_espaco" type="submit" class="btn btn-sm btn-danger" (click)="excluir()">Excluir</button>
-    </div>
-  </form>
+  </div>
+</div>
 </section>
 
 

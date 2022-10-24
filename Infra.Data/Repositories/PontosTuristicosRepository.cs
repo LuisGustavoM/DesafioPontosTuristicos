@@ -3,8 +3,6 @@ using Domain.Filtros;
 using Domain.Interfaces;
 using Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
-using System.Linq.Expressions;
 
 namespace Infra.Data.Repositories
 {

@@ -5,8 +5,8 @@ const routes: Routes = [
   { path: 'pontos-turisticos', loadChildren: () => import('./pages/pontosTuristicos/pontos-turisticos.module').then(m => m.PontosTuristicosModule)},
   { path: 'sobre', loadChildren: () => import('./pages/sobre/sobre.module').then(m => m.SobreModule)},
 
-  { path: '', redirectTo: 'inicio', pathMatch: 'full'},
-  { path: '**', redirectTo: 'inicio', pathMatch: 'full'},
+  { path: '', redirectTo: 'pontos-turisticos', pathMatch: 'full'},
+  { path: '**', redirectTo: 'pontos-turisticos', pathMatch: 'full'},
 
 ];
 
