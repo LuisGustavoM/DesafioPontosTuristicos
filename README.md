@@ -16,7 +16,7 @@
 <p align="justify">
  Projeto desenvolvido para resolver o desafio: 
  
-Deve ser criado uma aplicação para o cadastro e listagem de pontos turísticos do país, cada ponto turístico deve ter o nome, descrição até 100 caracteres e localização (endereço ou referência de localização), cidade e estado). Deve ser possível na página inicial listar de forma paginada os cadastros ordenados de forma descrente pela data de inclusão e permitir buscar/filtrar digitando um termo de busca analisando tanto nome e descritivo quanto localização dos pontos turísticos cadastrados. A página deve listar os pontos com o nome e localização. Ao ser selecionado o ponto turístico deve ser demonstrada o nome, descrição e localização. No cadastro, os estados deve ser listados como combo/dropdown e a cidade ou pode ser texto livre, ou buscar de algum webservice online disponível na internet as cidades de acordo com o estado selecionado. Criar um menu de navegação para alternar entre o formulário de cadastro e a listagem.
+Deve ser criado uma aplicação para o cadastro e listagem de pontos turísticos do país, cada ponto turístico deve ter o nome, descrição até 100 caracteres e localização (endereço ou referência de localização), cidade e estado. Deve ser possível na página inicial listar de forma paginada os cadastros ordenados de forma descrente pela data de inclusão e permitir buscar/filtrar digitando um termo de busca analisando tanto nome e descritivo quanto localização dos pontos turísticos cadastrados. A página deve listar os pontos com o nome e localização. Ao ser selecionado o ponto turístico deve ser demonstrada o nome, descrição e localização. No cadastro, os estados deve ser listados como combo/dropdown e a cidade ou pode ser texto livre, ou buscar de algum webservice online disponível na internet as cidades de acordo com o estado selecionado. Criar um menu de navegação para alternar entre o formulário de cadastro e a listagem.
 Para a solução optei por criar uma SPA com Angular 14, utilizando typescript, html, css, jquery, bootstrap. O qual consume uma API .NET core 6.0 distruibuido em camadas
 
 ## Compilar
@@ -26,7 +26,7 @@ Para a solução optei por criar uma SPA com Angular 14, utilizando typescript, 
   :heavy_check_mark: 2º:  <a href="https://angular.io/cli" target="_blank"> Angular CLI  </a>  - para executar a instalação abra um terminal como administrador e execute 'npm install -g @angular/cli'. <br />
 </p>
 
-Após concluido o donwload vá para o caminho
+Após concluido o download vá para o caminho
 <ol>
   <li> Sistema </li>
   <li> Configuração avançadas do sistema </li>
