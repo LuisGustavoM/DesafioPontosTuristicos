@@ -11,7 +11,7 @@ export class BtnCabecalhoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-
+    this.adicionarEventoBtn();
   }
 
   public adicionarEventoBtn(): void {

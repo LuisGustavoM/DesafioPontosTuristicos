@@ -35,7 +35,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     FormsModule,
     ReactiveFormsModule,
     NgxSpinnerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BtnCabecalhoComponent
   ]
 })
 export class CoreModule { }

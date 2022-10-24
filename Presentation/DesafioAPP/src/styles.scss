@@ -52,9 +52,16 @@ body {
   background-color: var(--segundaCor) !important;
 }
 
+@media screen and (max-width: 769px) {
+  section{
+    padding: 10% 2% 2% 2%;
+  }
+}
 
-section{
-  padding: 2%;
+@media screen and (min-width: 770px) {
+  section{
+    padding: 3%;
+  }
 }
 
 th{
