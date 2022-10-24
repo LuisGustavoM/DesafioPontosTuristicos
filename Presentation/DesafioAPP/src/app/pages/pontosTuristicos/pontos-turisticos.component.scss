@@ -1,0 +1,31 @@
+tbody{
+  font-size: 12px;
+  th{
+    font-weight: normal !important;
+  }
+}
+
+thead{
+  font-size: 14px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.acoes{
+  text-align: center;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-left: 10px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+span{
+  color: rgb(0, 38, 255);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h4{
+  color: var(--text-body);
+}

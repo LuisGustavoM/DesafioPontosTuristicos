@@ -1,0 +1,134 @@
+.navbar-toggler {
+  border: none !important;
+  color: transparent !important;
+
+}
+
+@media screen and (min-width: 769px) {
+  :host{
+    nav{
+      background-color: var(--primeiraCor);
+      width: 100%;
+      //height: 50px;
+      padding: 0 20px;
+      position: fixed;
+
+      &,ul{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        box-sizing: border-box !important;
+        margin-bottom: 0px !important;
+      }
+
+      ul{
+        li{
+          padding: 0 15px 0 0;
+          font-size: 12px;
+          font-weight: 700;
+          cursor: pointer;
+
+          a{
+            text-decoration: none;
+          }
+        }
+
+        li:after {
+          display: block;
+          content: '';
+          border-bottom: solid 1px var(--text-menu);
+          padding-bottom: 1%;
+          transform: scaleX(0);
+          transition: transform 300ms ease-in-out;
+      }
+
+      li:hover:after {
+          transform: scaleX(1);
+      }
+
+        &, a {
+          color: var(--text-menu);
+        }
+        // ultimo item com padding 0
+        &:last-child {
+          padding: 0;
+          button {
+            img {
+              width: 21px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.navbar-collapse {
+  flex-grow: 0 !important;
+
+}
+
+
+@media screen and (max-width: 768px) {
+  :host{
+    .navbar-collapse {
+      text-align: center;
+    }
+    nav{
+      background-color: var(--primeiraCor);
+      width: 100%;
+      padding: 0 20px;
+      position: fixed;
+
+      &,ul{
+        // display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        box-sizing: border-box !important;
+        margin-bottom: 0px !important;
+      }
+
+      ul{
+        li{
+          padding: 0 15px 0 0;
+          font-size: 12px;
+          font-weight: 700;
+          cursor: pointer;
+
+          a{
+            text-decoration: none;
+          }
+        }
+
+        li:after {
+          display: block;
+          content: '';
+          border-bottom: solid 1px var(--text-menu);
+          padding-bottom: 1%;
+          max-width: 20%;
+          margin: auto;
+          transform: scaleX(0);
+          transition: transform 300ms ease-in-out;
+          align-items: center;
+      }
+
+      li:hover:after {
+          transform: scaleX(1);
+      }
+
+        &, a {
+          color: var(--text-menu);
+        }
+        // ultimo item com padding 0
+        &:last-child {
+          padding: 0;
+          button {
+            img {
+              width: 21px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -4,22 +4,23 @@ namespace Domain.Entities
 {
     public class PontosTuristicos
     {
-        public Guid Id { get; set; }
-        public string Nome { get; set; }
-        public string Descricao { get; set; }
-        public string Referencia { get; set; }
-        public string Cidade { get; set; }
-        public string Estado { get; set; }
-
-
-        public PontosTuristicos(string nome, string descricao, string referencia, string cidade, string estado)
+        public Guid Id { get; private set; }
+        public string Nome { get; private set; }
+        public string Descricao { get; private set; }
+        public string Referencia { get; private set; }
+        public string Cidade { get; private set; }
+        public string Estado { get; private set; }
+        public DateTime DataHoraCadastro { get; private set; }
+        public PontosTuristicos(string nome, string descricao, string referencia, string cidade, string estado, DateTime dataHoraCadastro)
         {
             ValidateDomain(nome, descricao, referencia, cidade, estado);
+            DataHoraCadastro = dataHoraCadastro;
         }
 
-        public PontosTuristicos(Guid id, string nome, string descricao, string referencia, string cidade, string estado)
+        public PontosTuristicos(Guid id, string nome, string descricao, string referencia, string cidade, string estado, DateTime dataHoraCadastro)
         {
             Id = id;
+            DataHoraCadastro = dataHoraCadastro;
             ValidateDomain(nome, descricao, referencia, cidade, estado);
         }
 

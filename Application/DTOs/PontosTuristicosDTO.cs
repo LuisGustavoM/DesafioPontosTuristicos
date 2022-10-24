@@ -33,5 +33,6 @@ namespace Application.DTOs
         [Required(ErrorMessage = "Campo obrigatório!")]
         [DisplayName("Estado")]
         public string Estado { get; set; }
+        public DateTime DataHoraCadastro { get; set; }
     }
 }

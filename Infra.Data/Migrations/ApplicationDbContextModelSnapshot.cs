@@ -31,6 +31,9 @@ namespace Infra.Data.Migrations
                     b.Property<string>("Cidade")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<DateTime>("DataHoraCadastro")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -54,8 +57,9 @@ namespace Infra.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("2e7bc293-3c0e-42f1-a6b8-4dd8718e800a"),
+                            Id = new Guid("60bf0db9-0f3b-4b58-a61c-d4beb1f07a96"),
                             Cidade = "Rio de Janeiro",
+                            DataHoraCadastro = new DateTime(2022, 10, 23, 13, 27, 42, 739, DateTimeKind.Local).AddTicks(2330),
                             Descricao = "Principal ponto turístico do Rio de Janeiro",
                             Estado = "RJ",
                             Nome = "Cristo Redentor",
@@ -63,8 +67,9 @@ namespace Infra.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5fd0a06f-da00-4c68-a80c-8c580e51f597"),
+                            Id = new Guid("72c4c3f8-fc6e-4a07-9d8e-da169507ec5a"),
                             Cidade = "Rio de Janeiro",
+                            DataHoraCadastro = new DateTime(2022, 10, 23, 13, 27, 42, 739, DateTimeKind.Local).AddTicks(2351),
                             Descricao = "Principal ponto turístico do Rio de Janeiro",
                             Estado = "RJ",
                             Nome = "Pão de Açúcar",
@@ -72,8 +77,9 @@ namespace Infra.Data.Migrations
                         },
                         new
                         {
-                            Id = new Guid("46d868de-15c4-4dbf-a506-9c8b76e7425f"),
+                            Id = new Guid("adc2579f-edd1-4fcc-ac66-f7caa8c4a52a"),
                             Cidade = "Foz do Iguaçu",
+                            DataHoraCadastro = new DateTime(2022, 10, 23, 13, 27, 42, 739, DateTimeKind.Local).AddTicks(2355),
                             Descricao = "Patrimonio Natural da Humanidade.",
                             Estado = "PR",
                             Nome = "Cataratas do Iguaçu",

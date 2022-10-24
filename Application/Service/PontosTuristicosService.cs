@@ -2,6 +2,7 @@
 using Application.Interface;
 using AutoMapper;
 using Domain.Entities;
+using Domain.Filtros;
 using Domain.Interfaces;
 
 namespace Application.Service
@@ -17,34 +18,40 @@ namespace Application.Service
             _mapper = mapper;
         }
 
-        public async Task Add(PontosTuristicosDTO categoryDTO)
+        public async Task Add(PontosTuristicosDTO pontosTuristicosDTO)
         {
-            var categoryEntity = _mapper.Map<PontosTuristicos>(categoryDTO);
-            await _repo.Create(categoryEntity);
+            var pontosTuristicosEntity = _mapper.Map<PontosTuristicos>(pontosTuristicosDTO);
+            await _repo.Create(pontosTuristicosEntity);
         }
 
         public async Task<PontosTuristicosDTO> GetById(Guid id)
         {
-            var categoryEntity = await _repo.GetById(id);
-            return _mapper.Map<PontosTuristicosDTO>(categoryEntity);
+            var pontosTuristicosEntity = await _repo.GetById(id);
+            return _mapper.Map<PontosTuristicosDTO>(pontosTuristicosEntity);
         }
 
         public async Task Remove(Guid id)
         {
-            var categoriesEntity = _repo.GetById(id).Result;
-            await _repo.Remove(categoriesEntity);
+            var pontoTuristico = _repo.GetById(id).Result;
+            await _repo.Remove(pontoTuristico);
         }
 
-        public async Task Update(PontosTuristicosDTO categoryDTO)
+        public async Task Update(PontosTuristicosDTO pontosTuristicosDTO)
         {
-            var categoryEntity = _mapper.Map<PontosTuristicos>(categoryDTO);
-            await _repo.Update(categoryEntity);
+            var pontosTuristicosEntity = _mapper.Map<PontosTuristicos>(pontosTuristicosDTO);
+            await _repo.Update(pontosTuristicosEntity);
         }
 
         public async Task<IEnumerable<PontosTuristicosDTO>> GetPontosTuristicos()
         {
-            var categoriesEntity = await _repo.GetPontosTuristicos();
-            return _mapper.Map<IEnumerable<PontosTuristicosDTO>>(categoriesEntity);
+            var pontoTuristico = await _repo.GetPontosTuristicos();
+            return _mapper.Map<IEnumerable<PontosTuristicosDTO>>(pontoTuristico);
+        }
+
+        public async Task<IEnumerable<PontosTuristicosDTO>> GetPontosTuristicosByFiltro(FiltroPontosTuristicos filtro)
+        {
+            var pontoTuristico = await _repo.GetPontosTuristicosByFiltro(filtro);
+            return _mapper.Map<IEnumerable<PontosTuristicosDTO>>(pontoTuristico);
         }
     }
 }

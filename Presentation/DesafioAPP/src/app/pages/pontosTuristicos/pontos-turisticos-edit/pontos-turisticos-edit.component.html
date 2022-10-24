@@ -1,0 +1,107 @@
+<section>
+  <div class="d-flex flex-row mb-5 ">
+    <div *ngIf="pontoTuristico" class="p-8">
+      <h5>Detalhes ponto turístico: {{pontoTuristico.nome}}</h5>
+    </div>
+  </div>
+
+  <form [formGroup]="formGroup" needs-validation class="row g-3">
+    <div class="col-md-4">
+      <label for="nome" class="form-label">Nome</label>
+      <input type="text" formControlName="nome" maxlength="100" minlength="3" class="form-control" id="nome" >
+
+    <div *ngIf="formGroup.get('nome')!.hasError('required') && formGroup.get('nome')!.touched"
+      class="invalid-feedback d-block">
+        Campo Obrigatório. <br />
+    </div>
+
+    <div *ngIf="formGroup.get('nome')!.hasError('minlength')"
+    class="invalid-feedback d-block">
+      Tamanho mínimo de 3 caracters
+    </div>
+
+
+  <div *ngIf="formGroup.get('nome')!.hasError('maxlength')"
+  class="invalid-feedback d-block">
+    Tamanho máximo de 100 caracters
+</div>
+    </div>
+
+
+    <div class="col-md-4">
+      <label class="form-label">Descrição</label>
+      <input formControlName="descricao" maxlength="100" minlength="1" type="text" class="form-control" id="descricao">
+
+      <div *ngIf="formGroup.get('descricao')!.hasError('required') && formGroup.get('descricao')!.touched"
+      class="invalid-feedback d-block">
+        Campo Obrigatório. <br />
+    </div>
+
+    <div *ngIf="formGroup.get('descricao')!.hasError('minlength')"
+    class="invalid-feedback d-block">
+      Tamanho mínimo de 3 caracters
+    </div>
+
+
+  <div *ngIf="formGroup.get('descricao')!.hasError('maxlength')"
+  class="invalid-feedback d-block">
+    Tamanho máximo de 100 caracters
+</div>
+
+    </div>
+    <div class="col-md-4">
+      <label for="referencia" class="form-label">Referência</label>
+      <input formControlName="referencia" maxlength="100" type="text" class="form-control" id="referencia">
+
+      <div *ngIf="formGroup.get('referencia')!.hasError('required') && formGroup.get('referencia')!.touched"
+      class="invalid-feedback d-block">
+        Campo Obrigatório. <br />
+    </div>
+
+    <div *ngIf="formGroup.get('referencia')!.hasError('minlength')"
+    class="invalid-feedback d-block">
+      Tamanho mínimo de 3 caracters
+    </div>
+
+
+  <div *ngIf="formGroup.get('referencia')!.hasError('maxlength')"
+  class="invalid-feedback d-block">
+    Tamanho máximo de 100 caracters
+</div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">Estado</label>
+      <select formControlName="estado" class="form-control" (change)="buscarCidades($event.target)" >
+        <option value="0">--Selecione--</option>
+        <option *ngFor="let estado of estados" value= {{estado.sigla}}> {{estado.nome}} </option>
+
+      <div *ngIf="formGroup.get('estado')!.hasError('required') && formGroup.get('estado')!.touched"
+      class="invalid-feedback d-block">
+        Campo Obrigatório. <br />
+    </div>
+     </select>
+    </div>
+
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">Cidade</label>
+      <select formControlName="cidade" class="form-control" required >
+        <option value="0">--Selecione--</option>
+        <option *ngFor="let cidade of cidades" value= {{cidade.nome}}> {{cidade.nome}} </option>
+        <div *ngIf="formGroup.get('cidade')!.hasError('required') && formGroup.get('cidade')!.touched"
+        class="invalid-feedback d-block">
+          Campo Obrigatório. <br />
+      </div>
+     </select>
+    </div>
+
+    <div class="col-12">
+      <button routerLink='/pontos-turisticos' class="btn btn-sm btn-warning">Voltar</button>
+      <button id="btn_espaco" [disabled]="!formGroup.valid || formGroup.get('estado')!.value == '0' || formGroup.get('cidade')!.value == '0'"
+      type="submit" class="btn btn-sm btn-primary" (click)="salvar()">{{textoBotao}}</button>
+      <button id="btn_espaco" type="submit" class="btn btn-sm btn-danger" (click)="excluir()">Excluir</button>
+    </div>
+  </form>
+</section>
+
+

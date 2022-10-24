@@ -11,33 +11,6 @@ namespace Infra.Data.EntitiesConfig
             builder.HasKey(t => t.Id);
             builder.Property(p => p.Nome).HasMaxLength(100).IsRequired();
             builder.Property(p => p.Descricao).HasMaxLength(100).IsRequired();
-
-            builder.HasData(
-                new PontosTuristicos(
-                    Guid.NewGuid(), 
-                    "Cristo Redentor", 
-                    "Principal ponto turístico do Rio de Janeiro",
-                    "",
-                    "Rio de Janeiro",
-                    "RJ"
-                 ),
-                new PontosTuristicos(
-                    Guid.NewGuid(),
-                    "Pão de Açúcar",
-                    "Principal ponto turístico do Rio de Janeiro",
-                    "",
-                    "Rio de Janeiro",
-                    "RJ"
-                 ),
-                new PontosTuristicos(
-                    Guid.NewGuid(),
-                    "Cataratas do Iguaçu",
-                    "Patrimonio Natural da Humanidade.",
-                    "",
-                    "Foz do Iguaçu",
-                    "PR"
-                 )
-            );
         }
     }
 }

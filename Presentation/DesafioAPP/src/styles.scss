@@ -1,34 +1,70 @@
-section{
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap');
+@import '../plugins/bootstrap/css/bootstrap.min.css';
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+@import '../node_modules/ngx-toastr/toastr.css';
+// aplica em todo a aplicação
+*{
+  padding: 0;
   margin: 0;
-}
+  border: 0;
+  outline: 0;
+  list-style: none;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
 
-footer{
-  background: var(--quartaCor);
-  width: 100%;
-  height: 5%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-}
-
-  iframe {
-    width: 76.92% !important;
-    height: 76.92% !important;
-    -webkit-transform: scale(1.3);
-    transform: scale(1.3);
-    -webkit-transform-origin: 0 0;
-    transform-origin: 0 0;
+  // remove fundo do botão
+  button {
+    background: none;
+    cursor: pointer;
   }
-
-.pag {
-  // max-height: 90% !important;
-  margin-top: 5% !important;
 }
 
-// .nav {
-//   max-height: 5% !important;
-// }
+:root {
+  --primeiraCor: #162447;
+  --segundaCor: #fff;
+  --terceiraCor: #F7F7F2;
+  --quartaCor: #F7F7F2;
 
-// .rodape {
-//   max-height: 5% !important;
-// }
+  --primary: #1976d2;
+  --body: #fff;
+  --text-menu: #fff;
+  --text-body:#4B4B4B;
+  --progress-bar: #4B4B4B;
+  --tipo-table: 'light';
+}
+
+// quando class do body mudar altera tema para as configuraões abaixo
+:root .dark-theme {
+  --primeiraCor: #162447;
+  --segundaCor: #1f4068;
+  --terceiraCor: #1b1b2f;
+  --quartaCor: #e43f5a;
+  --quintaCor: #0c7b93;
+
+  --primary: #0d47a1;
+  --body: #4b4b4b;
+  --text-menu: #fff;
+  --text-body:#fff;
+  --progress-bar: #6e6e6e;
+  --tipo-table: 'dark';
+}
+
+body {
+  background-color: var(--segundaCor) !important;
+}
+
+
+section{
+  padding: 2%;
+}
+
+th{
+  color: var(--text-body);
+}
+
+td{
+  color: var(--text-body);
+}
+
+h4{
+  color: var(--text-body);
+}

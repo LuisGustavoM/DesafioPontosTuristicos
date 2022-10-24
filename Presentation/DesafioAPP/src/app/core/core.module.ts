@@ -5,6 +5,11 @@ import { RouterModule } from '@angular/router';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { SpinnerComponent } from './componentes/spinner/spinner.component';
+import { BtnCabecalhoComponent } from './componentes/cabecalho/btn-cabecalho/btn-cabecalho.component';
+import { HttpClientModule} from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { PopoverModule } from 'ngx-bootstrap/popover';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -12,11 +17,16 @@ import { SpinnerComponent } from './componentes/spinner/spinner.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    NgxSpinnerModule,
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    PopoverModule.forRoot(),
+    NgxPaginationModule
   ],
   declarations: [
     CabecalhoComponent,
     SpinnerComponent,
+    BtnCabecalhoComponent
   ],
   exports:[
     SpinnerComponent,
@@ -24,7 +34,8 @@ import { SpinnerComponent } from './componentes/spinner/spinner.component';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    NgxPaginationModule
   ]
 })
 export class CoreModule { }

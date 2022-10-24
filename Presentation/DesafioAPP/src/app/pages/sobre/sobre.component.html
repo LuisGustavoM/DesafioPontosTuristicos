@@ -1,0 +1,193 @@
+
+ <section class="ms-4">
+  <div class="d-flex flex-row mb-5 ">
+    <div class="p-8">
+      <h3>Proposta do desafio</h3>
+    </div>
+  </div>
+
+  <div class="row mt-3 mb-5">
+    <div>
+      <h5>Teste Prático para Desenvolvimento Web </h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div>
+      <h5>Indíce</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <ul>
+      <li><a href="objetivo">Objetivo</a></li>
+      <li><a href="#requisitos">Requisitos para o Teste</a></li>
+      <li><a href="#obrigatorio">O que é obrigatório no teste?</a></li>
+      <li><a href="#naoobrigatorio">O que não é obrigatório mas contará pontos</a></li>
+      <li><a href="#descricao">Descrição do Teste</a></li>
+      <li><a href="#modelos">Modelos da Solução</a></li>
+      <li><a href="#exemplos">Telas que devem ser usadas como referência para as funcionalidades</a></li>
+    </ul>
+  </div>
+
+
+  <div id="objetivo" class="mt-5">
+    <div class="row">
+      <h5>Objetivo</h5>
+    </div>
+    <div class="row" id="conteudo" class="ms-3">
+      <ul>
+        <li>
+          O objetivo do teste é avaliar a forma como o candidato evolui a solução para o problema proposto. O candidato
+          deve entregar o teste contemplando os itens obrigatórios.
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div #requisitos class="mt-5">
+    <div class="row">
+      <h5> Requisitos para o Teste</h5>
+    </div>
+    <div class="row" id="conteudo" class="ms-3">
+        <ul>
+          <li><a> Conhecimento básico, intermediário ou avançado em:</a>
+            <ul>
+              <li><a> Alguma das linguagens a seguir para realizar o teste: C#(preferencialmente), Javascript(Nodejs) ou
+                  PHP,
+                  caso não tenha conhecimento em nenhuma destas favor informar ao receber este teste qual será
+                  utilizada.</a>
+              </li>
+              <li>
+                SQL
+              </li>
+              <li>
+                HTML/CSS
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+  </div>
+
+  <div #requisitos class="mt-5">
+    <div class="row">
+      <h5> O que é obrigatório no teste? </h5>
+    </div>
+    <div class="row" id="conteudo" class="ms-3">
+        <ul>
+          <li><a> Entregar todos os itens do tópico Descrição do Teste mais abaixo</a> </li>
+          <li>
+            Entregar todos os itens do tópico Descrição do Teste mais abaixo
+          </li>
+          <li>
+            Utilizar o GIT para controle de versão e ter ao menos dois commits
+          </li>
+          <li>
+            Uso de um banco de dados relacional, podendo ser o SQLite ou SQL Server
+          </li>
+          <li>
+            Disponibilizar um markdown (ex: README.md) na raiz da solução com as instruções para compilar, configurar
+            banco e executar o projeto
+          </li>
+        </ul>
+      </div>
+  </div>
+
+  <div #requisitos class="mt-5">
+    <div class="row">
+      <h5>
+        O que não é obrigatório mas contará pontos
+      </h5>
+    </div>
+    <div class="row" id="conteudo" class="ms-3">
+        <ul>
+          <li>
+            <a>
+              Uso de conceitos de OOP e boas práticas;
+            </a>
+          </li>
+          <li>
+            Separação de responsabilidade do código (código de aplicação, regra de negócio e acesso a dados);
+          </li>
+          <li>
+            Utilizar alguma biblioteca de frontend como React ou jQuery.
+          </li>
+        </ul>
+    </div>
+  </div>
+
+  <div #requisitos class="mt-5">
+    <div class="row">
+      <h5>
+        Descrição do Teste
+      </h5>
+    </div>
+    <div class="row" id="conteudo" class="ms-5 mb-3">
+        Deve ser criado uma aplicação para o cadastro e listagem de pontos turísticos do país, cada ponto turístico deve
+        ter
+        o nome, descrição até 100 caracteres e localização (endereço ou referência de localização), cidade e estado).
+        <br /> <br />
+        Deve ser possível na página inicial listar de forma paginada os cadastros ordenados de forma descrente pela data
+        de
+        inclusão e permitir buscar/filtrar digitando um termo de busca analisando tanto nome e descritivo quanto
+        localização dos pontos turísticos cadastrados. A página deve listar os pontos com o nome e localização.<br />
+        <br />
+        Ao ser selecionado o ponto turístico deve ser demonstrada o nome, descrição e localização. No cadastro, os
+        estados
+        deve ser listados como combo/dropdown e a cidade ou pode ser texto livre, ou buscar de algum webservice online
+        disponível na internet as cidades de acordo com o estado selecionado. <br /> <br />
+        Criar um menu de navegação para alternar entre o formulário de cadastro e a listagem.
+    </div>
+  </div>
+
+
+  <div #requisitos class="mt-5">
+    <div class="row">
+      <h5>
+        Modelos da Solução
+      </h5>
+    </div>
+    <div class="row" id="conteudo" class="ms-5 mb-3">
+      Abaixo estão dispostos dois modelos solução que o candidato poderá escolher, escolha o que estiver mais
+      confortável e compatível com seus conhecimentos:
+    </div>
+
+    <div class="row">
+      <h5> Monolítica (perfil júnior)</h5>
+    </div>
+
+    <div class="row" id="conteudo" class="ms-5 mb-3">
+      Criar uma aplicação web comum, contendo as funcionalidades solicitadas, onde a mesma serve as páginas com as
+      informações desejadas e processa as requisições se conectando ao banco para gravar ou consultar dados.
+    </div>
+
+    <div class="row">
+      <h5>
+        Em Camadas (perfil pleno/sênior)
+      </h5>
+    </div>
+
+    <div class="row" id="conteudo" class="ms-5">
+      Dividir a aplicação em duas camadas físicas rodando independentemente, sendo: . O projeto com a API responsável
+      pelo processamento de requisições e se conectar ao banco de dados para gravar ou consultar informações . O
+      projeto com a aplicação front-end podendo ser um SPA React onde se comunicará com a API via Ajax via fetch/axios
+      etc, ou aplicação comum onde o backend se comunicará com a API através de HTTP requests.
+    </div>
+  </div>
+
+  <div #requisitos>
+    <div class="row mt-5">
+      <h5>
+        Telas que devem ser usadas como referência para as funcionalidades
+      </h5>
+    </div>
+    <div class="row" id="conteudo" class="ms-5 mb-3">
+      <div class="row">
+        Esse não deu pra trazer rsrsrs, não tinha as imagens e tirar print ficou bem feio 😂😂
+      </div>
+    </div>
+  </div>
+
+</section>

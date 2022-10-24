@@ -1,6 +1,7 @@
 ﻿
 using Application.DTOs;
 using Application.Interface;
+using Domain.Filtros;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
@@ -17,7 +18,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PontosTuristicosDTO>>> GetPontosTuristicos()
+        public async Task<ActionResult<IEnumerable<PontosTuristicosDTO>>> BuscarTodos()
         {
             var pontosTuristicos = await _repo.GetPontosTuristicos();
 
@@ -28,9 +29,21 @@ namespace API.Controllers
             return Ok(pontosTuristicos);
         }
 
+        [HttpPost("BuscarTodosPorFiltro")]
+        public async Task<ActionResult<IEnumerable<PontosTuristicosDTO>>> BuscarTodosPorFiltro([FromBody] FiltroPontosTuristicos filtroPontosTuristicos)
+        {
+            var pontosTuristicos = await _repo.GetPontosTuristicosByFiltro(filtroPontosTuristicos);
 
-        [HttpGet("{id:Guid}", Name = "GetPontoTuristico")]
-        public async Task<ActionResult<PontosTuristicosDTO>> Get(Guid id)
+            if (pontosTuristicos == null)
+            {
+                return NotFound("Nenhum ponto turistico encontrado!");
+            }
+            return Ok(pontosTuristicos);
+        }
+
+
+        [HttpGet("{id:Guid}", Name = "BuscarPorId")]
+        public async Task<ActionResult<PontosTuristicosDTO>> BuscarPorId(Guid id)
         {
             var pontoTuristico = await _repo.GetById(id);
             if (pontoTuristico == null)
@@ -41,19 +54,18 @@ namespace API.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> Post([FromBody] PontosTuristicosDTO pontoTuristicoDTO)
+        public async Task<ActionResult> Cadastrar([FromBody] PontosTuristicosDTO pontoTuristicoDTO)
         {
             if (pontoTuristicoDTO == null)
                 return BadRequest();
 
+            pontoTuristicoDTO.DataHoraCadastro = DateTime.Now;
             await _repo.Add(pontoTuristicoDTO);
 
-            return new CreatedAtRouteResult("GetPontoTuristico", new { id = pontoTuristicoDTO.Id },
-                pontoTuristicoDTO);
+            return Ok(pontoTuristicoDTO);
         }
-
-        [HttpPut]
-        public async Task<ActionResult> Put(Guid id, [FromBody] PontosTuristicosDTO pontoTuristicoDTO)
+        [HttpPut("{id:Guid}")]
+        public async Task<ActionResult> Editar(Guid id, [FromBody] PontosTuristicosDTO pontoTuristicoDTO)
         {
             if (id != pontoTuristicoDTO.Id)
                 return BadRequest();
@@ -61,13 +73,14 @@ namespace API.Controllers
             if (pontoTuristicoDTO == null)
                 return BadRequest();
 
+            pontoTuristicoDTO.DataHoraCadastro = pontoTuristicoDTO.DataHoraCadastro;
             await _repo.Update(pontoTuristicoDTO);
 
             return Ok(pontoTuristicoDTO);
         }
 
         [HttpDelete("{id:Guid}")]
-        public async Task<ActionResult<PontosTuristicosDTO>> Delete(Guid id)
+        public async Task<ActionResult<PontosTuristicosDTO>> Excluir(Guid id)
         {
             var pontoTuristico = await _repo.GetById(id);
             if (pontoTuristico == null)
