@@ -1,4 +1,4 @@
-<h1 align="center"> Desafio Técnico SINQIA - Pontos Turísticos</h1>
+<h1 align="center"> Desafio Técnico - Pontos Turísticos</h1>
 
 <p align="center">
 <img src="https://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
@@ -75,6 +75,6 @@ Para compilar o FrontEnd, acesse seu editor de código preferido, navegue e aces
 
 ## Agradecimentos
  
-Agradecer pela oportunidade de estar participando do processo e seletivo e agradecer em especial a Leticia e Rosângela, recruiters da Sinqia. Muito Obrigado ❤️
+Agradecer pela oportunidade de estar participando do processo e seletivo e agradecer em especial as recruiters Leticia e Rosângela. Muito Obrigado ❤️
 
 
